@@ -5,6 +5,7 @@ from flask_restx import Api
 def initialize_app(config_type):
   app = Flask(__name__, instance_relative_config=False)
   app.config.from_object(f'app.config.{config_type}.Config')
+
   ## Initialize ORM
   db = SQLAlchemy(app)
   ## Initialize RESTful
@@ -12,7 +13,7 @@ def initialize_app(config_type):
   
   with app.app_context():
     ## Modules contexts
-    from .modules.hello_world.resource import helloworld_namespace
+    from .modules.hello_world.namespace import helloworld_namespace
 
     api.add_namespace(helloworld_namespace(api))
 
