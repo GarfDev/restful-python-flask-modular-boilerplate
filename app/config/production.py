@@ -1,5 +1,5 @@
 from app.config.base import Config
 
-class ProductionConfig(Config):
+class Config(Config):
     DEBUG = False
     DEVELOPMENT = False

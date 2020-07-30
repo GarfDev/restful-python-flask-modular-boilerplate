@@ -1,6 +1,4 @@
 from app.config.base import Config
-
-class DevConfig(Config):
+class Config(Config):
     DEBUG = True
     DEVELOPMENT = True
-    
